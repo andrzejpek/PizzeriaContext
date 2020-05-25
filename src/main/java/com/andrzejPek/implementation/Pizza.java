@@ -6,6 +6,7 @@ import com.andrzejPek.templates.Size;
 
 import java.util.ArrayList;
 
+
 public abstract class Pizza implements IPizza {
 
     protected String name;
@@ -19,8 +20,10 @@ public abstract class Pizza implements IPizza {
     }
 
     @Override
-    public void setAdditives(Additives additives) {
-        listAdditives.add(additives);
+    public void setAdditives(Additives... additives) {
+        listAdditives = new ArrayList<>();
+        for (Additives a : additives)
+        listAdditives.add(a);
     }
 
     @Override
@@ -40,6 +43,9 @@ public abstract class Pizza implements IPizza {
 
     @Override
     public void setPrice(int price) {
+        for (Additives a : listAdditives) {
+            price += a.getPrice();
+        }
         this.price = price;
     }
 

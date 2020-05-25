@@ -1,3 +1,4 @@
+com\andrzejPek\config\Config.class
 com\andrzejPek\templates\IPizza.class
 com\andrzejPek\templates\Additives.class
 com\andrzejPek\application\Main.class
