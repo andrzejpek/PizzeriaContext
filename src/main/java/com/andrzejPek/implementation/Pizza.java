@@ -4,6 +4,7 @@ import com.andrzejPek.templates.Additives;
 import com.andrzejPek.templates.IPizza;
 import com.andrzejPek.templates.Size;
 
+
 import java.util.ArrayList;
 
 
@@ -53,6 +54,13 @@ public abstract class Pizza implements IPizza {
         this.price = price;
     }
 
+    public void price(){
+        price = 15;
+        for (Additives a : listAdditives) {
+            price += a.getPrice();
+        }
+    }
+
     @Override
     public void setName(String name) {
         this.name = name;
@@ -61,5 +69,13 @@ public abstract class Pizza implements IPizza {
     @Override
     public void setSize(Size size) {
         this.size = size;
+    }
+
+    @Override
+    public void deleteAdditives(Additives... additives){
+        for (Additives a : additives){
+            listAdditives.remove(a);
+        }
+        price();
     }
 }

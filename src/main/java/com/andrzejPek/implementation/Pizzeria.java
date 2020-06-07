@@ -49,6 +49,7 @@ public class Pizzeria implements IPizzeria {
         pizza.setAdditives(additives);
         pizza.setPrice(pizza.getPrice(),size);
         System.out.printf("Your pizza is %s Additives: %s cost is: %d %n",pizza.getName(),pizza.listAdditives,pizza.getPrice());
+        pizza.deleteAdditives(additives);
         return pizza;
     }
 }

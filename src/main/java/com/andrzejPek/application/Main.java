@@ -21,15 +21,17 @@ public class Main {
         Pizza pizzaParma = context.getBean(PizzaParma.class);
         Pizza pizzaPeppeRosso = context.getBean(PizzaPeppeRosso.class);
         Pizza pizzaStart = context.getBean(PizzaStart.class);
-        System.out.println(pizzaPepperoni.getName()+" "+pizzaPepperoni.getPrice());
+
 
 
     showAdditives();
     showSize();
     pizzeria.orderPizza(pizzaStart,Size.average,Additives.pineapple,Additives.capers);
     pizzeria.orderPizza(pizzaHawaiian,Size.big,Additives.mashrooms,Additives.pepper);
+        System.out.println(pizzaStart.getAdditives());
+        System.out.println(pizzaHawaiian.getAdditives()+""+pizzaHawaiian.getPrice());
 
-  
+
     }
 
 

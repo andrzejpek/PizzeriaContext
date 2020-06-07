@@ -16,7 +16,7 @@ public class Config {
 
 
     @Bean
-    @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+    @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
     public PizzaHawaiian getPizzaHawaiian() {
         PizzaHawaiian pizzaHawaiian = new PizzaHawaiian();
         pizzaHawaiian.setName("Pizza Hawaiian");
@@ -25,7 +25,7 @@ public class Config {
     }
 
     @Bean
-    @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+    @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
     public PizzaCapricosa getPizzaCapricosa() {
         PizzaCapricosa pizzaCapricosa = new PizzaCapricosa();
         pizzaCapricosa.setName("Pizza Capricosa");
@@ -33,7 +33,7 @@ public class Config {
         return pizzaCapricosa;
     }
     @Bean
-    @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+    @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
     public PizzaItaly getPizzaItaly() {
         PizzaItaly pizzaItaly = new PizzaItaly();
         pizzaItaly.setName("Pizza Italy");
@@ -41,7 +41,7 @@ public class Config {
         return pizzaItaly;
     }
     @Bean
-    @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+    @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
     public PizzaParma getPizzaParma() {
         PizzaParma pizzaParma = new PizzaParma();
         pizzaParma.setName("Pizza Italy");
@@ -49,7 +49,7 @@ public class Config {
         return pizzaParma;
     }
     @Bean
-    @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+    @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
     public PizzaPepperoni getPizzaPepperoni() {
         PizzaPepperoni pizzaPepperoni = new PizzaPepperoni();
         pizzaPepperoni.setName("Pizza Pepperoni");
@@ -57,7 +57,7 @@ public class Config {
         return pizzaPepperoni;
     }
     @Bean
-    @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+    @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
     public PizzaPeppeRosso getPizzaPeppeRosso() {
         PizzaPeppeRosso pizzaPeppeRosso = new PizzaPeppeRosso();
         pizzaPeppeRosso.setName("Pizza Italy");
@@ -65,7 +65,7 @@ public class Config {
         return pizzaPeppeRosso;
     }
     @Bean
-    @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+    @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
     public PizzaStart getPizzaStart() {
         PizzaStart pizzaStart = new PizzaStart();
         pizzaStart.setAdditives(Additives.chesse);

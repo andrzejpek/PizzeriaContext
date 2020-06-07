@@ -12,5 +12,5 @@ public interface IPizza {
     public void setName(String name);
     public void setSize(Size size);
     public void setAdditives(Additives... additives);
-
+    public void deleteAdditives(Additives... additives);
 }
