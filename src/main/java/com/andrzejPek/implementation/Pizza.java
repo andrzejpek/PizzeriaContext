@@ -11,8 +11,8 @@ public abstract class Pizza implements IPizza {
 
     protected String name;
     protected Size size;
-    protected int price;
-    protected ArrayList<Additives> listAdditives;
+    protected int price = 15;
+    protected ArrayList<Additives> listAdditives = new ArrayList<>();
 
     @Override
     public ArrayList<Additives> getAdditives() {
@@ -21,7 +21,6 @@ public abstract class Pizza implements IPizza {
 
     @Override
     public void setAdditives(Additives... additives) {
-        listAdditives = new ArrayList<>();
         for (Additives a : additives)
         listAdditives.add(a);
     }
@@ -42,10 +41,15 @@ public abstract class Pizza implements IPizza {
     }
 
     @Override
-    public void setPrice(int price) {
+    public void setPrice(int price,Size size) {
         for (Additives a : listAdditives) {
             price += a.getPrice();
         }
+        if (size == Size.average){
+            price += 5;
+        }else if (size == Size.big)
+            price += 8;
+
         this.price = price;
     }
 

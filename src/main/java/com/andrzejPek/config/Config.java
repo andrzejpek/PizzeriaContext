@@ -2,8 +2,6 @@ package com.andrzejPek.config;
 
 import com.andrzejPek.implementation.*;
 import com.andrzejPek.templates.Additives;
-import com.andrzejPek.templates.IPizza;
-import com.andrzejPek.templates.IPizzeria;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,7 +11,8 @@ import org.springframework.context.annotation.Scope;
 public class Config {
 
     @Bean
-    public IPizzeria getPizzeria(){ return new Pizzeria("Forno"); }
+    @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
+    public Pizzeria getPizzeria(){ return new Pizzeria("Forno"); }
 
 
     @Bean
@@ -22,7 +21,6 @@ public class Config {
         PizzaHawaiian pizzaHawaiian = new PizzaHawaiian();
         pizzaHawaiian.setName("Pizza Hawaiian");
         pizzaHawaiian.setAdditives(Additives.chesse,Additives.pineapple);
-        pizzaHawaiian.setPrice(15);
         return pizzaHawaiian;
     }
 
@@ -32,7 +30,6 @@ public class Config {
         PizzaCapricosa pizzaCapricosa = new PizzaCapricosa();
         pizzaCapricosa.setName("Pizza Capricosa");
         pizzaCapricosa.setAdditives(Additives.chesse,Additives.ham,Additives.mashrooms);
-        pizzaCapricosa.setPrice(15);
         return pizzaCapricosa;
     }
     @Bean
@@ -41,7 +38,6 @@ public class Config {
         PizzaItaly pizzaItaly = new PizzaItaly();
         pizzaItaly.setName("Pizza Italy");
         pizzaItaly.setAdditives(Additives.chesseMozzarella,Additives.anchois,Additives.onion,Additives.capers);
-        pizzaItaly.setPrice(15);
         return pizzaItaly;
     }
     @Bean
@@ -50,7 +46,6 @@ public class Config {
         PizzaParma pizzaParma = new PizzaParma();
         pizzaParma.setName("Pizza Italy");
         pizzaParma.setAdditives(Additives.chesseMozzarella,Additives.bazil,Additives.ham);
-        pizzaParma.setPrice(15);
         return pizzaParma;
     }
     @Bean
@@ -59,7 +54,6 @@ public class Config {
         PizzaPepperoni pizzaPepperoni = new PizzaPepperoni();
         pizzaPepperoni.setName("Pizza Pepperoni");
         pizzaPepperoni.setAdditives(Additives.chesse,Additives.pepper,Additives.salami);
-        pizzaPepperoni.setPrice(15);
         return pizzaPepperoni;
     }
     @Bean
@@ -68,7 +62,6 @@ public class Config {
         PizzaPeppeRosso pizzaPeppeRosso = new PizzaPeppeRosso();
         pizzaPeppeRosso.setName("Pizza Italy");
         pizzaPeppeRosso.setAdditives(Additives.chesse,Additives.pepper,Additives.salami,Additives.bazil);
-        pizzaPeppeRosso.setPrice(15);
         return pizzaPeppeRosso;
     }
     @Bean
@@ -76,8 +69,7 @@ public class Config {
     public PizzaStart getPizzaStart() {
         PizzaStart pizzaStart = new PizzaStart();
         pizzaStart.setAdditives(Additives.chesse);
-        pizzaStart.setPrice(15);
-        pizzaStart.setName("Pizza Italy");
+        pizzaStart.setName("Pizza Start");
         return pizzaStart;
     }
 }

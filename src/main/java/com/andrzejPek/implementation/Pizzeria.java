@@ -1,7 +1,8 @@
 package com.andrzejPek.implementation;
 
-import com.andrzejPek.templates.IPizza;
+import com.andrzejPek.templates.Additives;
 import com.andrzejPek.templates.IPizzeria;
+import com.andrzejPek.templates.Size;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class Pizzeria implements IPizzeria {
@@ -32,13 +33,22 @@ public class Pizzeria implements IPizzeria {
 
     }
 
-    @Override
-    public IPizza orderPizza(String namePizza) {
-        return null;
-    }
+
 
     @Override
     public String getName() {
         return namePizzeria;
+    }
+
+    @Override
+    public Pizza orderPizza(Pizza pizza, Size size) {
+        return pizza;
+    }
+
+    public Pizza orderPizza(Pizza pizza,Size size, Additives... additives){
+        pizza.setAdditives(additives);
+        pizza.setPrice(pizza.getPrice(),size);
+        System.out.printf("Your pizza is %s Additives: %s cost is: %d %n",pizza.getName(),pizza.listAdditives,pizza.getPrice());
+        return pizza;
     }
 }

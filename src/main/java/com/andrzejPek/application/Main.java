@@ -1,10 +1,8 @@
 package com.andrzejPek.application;
 
 import com.andrzejPek.config.Config;
-import com.andrzejPek.implementation.PizzaPepperoni;
+import com.andrzejPek.implementation.*;
 import com.andrzejPek.templates.Additives;
-import com.andrzejPek.templates.IPizza;
-import com.andrzejPek.templates.IPizzeria;
 import com.andrzejPek.templates.Size;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -13,16 +11,28 @@ public class Main {
 
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
 
-        IPizzeria pizzeria = context.getBean(IPizzeria.class);
+        Pizzeria pizzeria = context.getBean(Pizzeria.class);
         System.out.println(pizzeria.getName());
 
-        IPizza pizza = context.getBean(PizzaPepperoni.class);
-        System.out.println(pizza.getName()+" "+pizza.getPrice());
+        Pizza pizzaPepperoni = context.getBean(PizzaPepperoni.class);
+        Pizza pizzaCapricosa = context.getBean(PizzaCapricosa.class);
+        Pizza pizzaHawaiian = context.getBean(PizzaHawaiian.class);
+        Pizza pizzaItaly = context.getBean(PizzaItaly.class);
+        Pizza pizzaParma = context.getBean(PizzaParma.class);
+        Pizza pizzaPeppeRosso = context.getBean(PizzaPeppeRosso.class);
+        Pizza pizzaStart = context.getBean(PizzaStart.class);
+        System.out.println(pizzaPepperoni.getName()+" "+pizzaPepperoni.getPrice());
 
 
     showAdditives();
     showSize();
+    pizzeria.orderPizza(pizzaStart,Size.average,Additives.pineapple,Additives.capers);
+    pizzeria.orderPizza(pizzaHawaiian,Size.big,Additives.mashrooms,Additives.pepper);
+
+  
     }
+
+
 
     public static void showAdditives(){
         for (Additives d : Additives.values()){
