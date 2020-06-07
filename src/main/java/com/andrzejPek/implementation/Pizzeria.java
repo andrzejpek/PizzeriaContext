@@ -5,9 +5,12 @@ import com.andrzejPek.templates.IPizzeria;
 import com.andrzejPek.templates.Size;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.ArrayList;
+
 public class Pizzeria implements IPizzeria {
 
     private String namePizzeria;
+    private ArrayList<Pizza> listPizza = new ArrayList();
 
     @Autowired
     private PizzaStart pizzaStart;
@@ -30,9 +33,17 @@ public class Pizzeria implements IPizzeria {
 
     @Override
     public void showMenu() {
-
+        System.out.println("Menu");
+        for (Pizza a : listPizza){
+            System.out.println(a.name+" "+a.listAdditives+" "+a.getPrice());
+        }
     }
 
+
+    public void setListPizza(Pizza pizza) {
+        listPizza.add(pizza);
+        this.listPizza = listPizza;
+    }
 
 
     @Override

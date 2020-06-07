@@ -28,6 +28,7 @@ public abstract class Pizza implements IPizza {
 
     @Override
     public int getPrice() {
+        price();
         return price;
     }
 

@@ -21,7 +21,7 @@ public class Main {
         Pizza pizzaParma = context.getBean(PizzaParma.class);
         Pizza pizzaPeppeRosso = context.getBean(PizzaPeppeRosso.class);
         Pizza pizzaStart = context.getBean(PizzaStart.class);
-
+        pizzeria.showMenu();
 
 
     showAdditives();
@@ -31,7 +31,7 @@ public class Main {
         System.out.println(pizzaStart.getAdditives());
         System.out.println(pizzaHawaiian.getAdditives()+""+pizzaHawaiian.getPrice());
 
-
+    pizzeria.showMenu();
     }
 
 
