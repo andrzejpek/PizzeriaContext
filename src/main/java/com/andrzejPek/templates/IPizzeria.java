@@ -6,5 +6,5 @@ public interface IPizzeria {
 
     public void showMenu();
     public String getName();
-    public Pizza orderPizza(Pizza pizza,Size size);
+    public IPizza orderPizza(IPizza pizza,Size size);
 }
